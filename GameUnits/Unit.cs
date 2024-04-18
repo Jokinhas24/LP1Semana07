@@ -1,12 +1,13 @@
+using System;
 using System.Runtime.CompilerServices;
 
 namespace GameUnits
 {
-    public class Unit
+    public abstract class Unit
     {
         private int movement;
         public virtual int Health { get; set; }
-        public float Cost  { get; }
+        public abstract float Cost  { get; }
 
         public Unit(int movement, int health)
         {
@@ -15,7 +16,7 @@ namespace GameUnits
         }
         public void Move()
         {
-            Console.WriteLine("", movement);
+            Console.WriteLine($"This unit moved {movement} tiles.");
         }
     }
 }
