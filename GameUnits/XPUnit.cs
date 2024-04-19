@@ -12,7 +12,7 @@ namespace GameUnits
         {
             return base.ToString() + $" XP={XP}";
         }
-        public XPUnit(int mov, int health, int attackPower) : base(mov, health)
+        public XPUnit(int mov, int health) : base(mov, health)
         {
             XP = 0;
         }
