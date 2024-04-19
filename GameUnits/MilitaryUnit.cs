@@ -24,7 +24,6 @@ namespace GameUnits
                 return AttackPower + XP;
             }
         }
-
         public MilitaryUnit(int mov, int health, int attackPower) : base(mov, health)
         {                                                        // Unit(int, int)
             AttackPower = attackPower;
