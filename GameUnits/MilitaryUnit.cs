@@ -24,6 +24,10 @@ namespace GameUnits
                 return AttackPower + XP;
             }
         }
+        public override string ToString()
+        {
+            return base.ToString() + $"AP={AttackPower} XP={XP}";
+        }
         public MilitaryUnit(int mov, int health, int attackPower) : base(mov, health)
         {                                                        // Unit(int, int)
             AttackPower = attackPower;
