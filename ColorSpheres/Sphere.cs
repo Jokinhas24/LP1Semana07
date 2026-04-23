@@ -8,44 +8,33 @@ namespace ColorSpheres
 {
     public class Sphere
     {
-        private int red;
-        private int green;
-        private int blue;
-        private int alpha;
-        public Color(int red, int green, int blue, int alpha)
+        private Color color;
+        private float ray;
+        private int timesthrown;
+        public Sphere(Color color, float ray)
         {
-            this.red = red;
-            this.green = green;
-            this.blue = blue;
-            this.alpha = alpha;
+            this.color = color;
+            this.ray = ray;
+            timesthrown = 0;
         }
-        public Color(int red, int green, int blue)
+        public float GetRay()
         {
-            this.red = red;
-            this.green = green;
-            this.blue = blue;
-            alpha = 255;
+            return ray;
         }
-
-        public int GetRed()
+        public void Pop()
         {
-            return red;
+            ray = 0;
         }
-        public int GetGreen()
+        public void Throw()
         {
-            return green;
+            if (ray > 0)
+            {
+                timesthrown += 1;
+            }
         }
-        public int GetBlue()
+        public int GetTimesThrown()
         {
-            return blue;
-        }
-        public int GetAlpha()
-        {
-            return alpha;
-        }
-        public int GetGrey()
-        {
-            return (red + green + blue)/3;
+            return timesthrown;
         }
     }
 }
