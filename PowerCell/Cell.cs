@@ -9,22 +9,38 @@ namespace PowerCell
     {
         private float charge;
         private readonly string name;
+        public string Name {get; set;}
         private readonly int level;
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            private set
+            {
+                1 + (int.Parse(charge)/40);
+            }
+        }
         public Cell (string name)
         {
             this.name = name;
             charge = 200;
         }
-        public void Charge(float value)
+        public void Consume(float amount)
         {
-            if ((charge += value) > 200)
+            if ((charge -= amount) < 0)
             {
-                charge = 200;
+                charge = 0;
             }
             else
             {
-                charge += value;
+                charge -= amount;
             }
+        }
+        public void Restore()
+        {
+                charge = 200;
         }
 
     }
