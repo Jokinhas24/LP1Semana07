@@ -43,6 +43,9 @@ namespace PowerCell
         {
                 charge = 200;
         }
-
+        public override string ToString()
+        {
+            return $"[{Name}] Level {Level}: {Charge:F0}/200";
+        }
     }
 }
