@@ -7,25 +7,26 @@ namespace PowerCell
 {
     public class Cell
     {
-        private float charge;
         private readonly string name;
-        public string Name {get; set;}
+        private float charge;
         private readonly int level;
-        public int Level
+        public string Name {get;}
+        public float Charge
         {
-            get
+            get;
+            set
             {
-                return level;
-            }
-            private set
-            {
-                1 + (int.Parse(charge)/40);
+                charge = value;
+                if (charge > 200) {charge = 200;}
+                if (charge < 0) {charge = 0;}
             }
         }
+        public int Level {get;}
         public Cell (string name)
         {
             this.name = name;
             charge = 200;
+            level = 1 + (int.Parse(charge)/40);
         }
         public void Consume(float amount)
         {
