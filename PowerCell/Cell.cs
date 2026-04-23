@@ -26,7 +26,7 @@ namespace PowerCell
         {
             this.name = name;
             charge = 200;
-            level = 1 + (int.Parse(charge)/40);
+            level = 1 + ((int)charge/40);
         }
         public void Consume(float amount)
         {
